@@ -55,6 +55,8 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
                     }
                     RNJitsiMeetConferenceOptions options = new RNJitsiMeetConferenceOptions.Builder()
                             .setRoom(url)
+                            .setFeatureFlag("call-integration.enabled", false)
+                            .setFeatureFlag("resolution", 360)
                             .setAudioOnly(false)
                             .setUserInfo(_userInfo)
                             .build();
@@ -88,6 +90,8 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
                     }
                     RNJitsiMeetConferenceOptions options = new RNJitsiMeetConferenceOptions.Builder()
                             .setRoom(url)
+                            .setFeatureFlag("call-integration.enabled", false)
+                            .setFeatureFlag("resolution", 360)
                             .setAudioOnly(true)
                             .setUserInfo(_userInfo)
                             .build();
