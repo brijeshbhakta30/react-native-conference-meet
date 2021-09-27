@@ -55,10 +55,12 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
                     }
                     RNJitsiMeetConferenceOptions options = new RNJitsiMeetConferenceOptions.Builder()
                             .setRoom(url)
-                            .setFeatureFlag("call-integration.enabled", false)
-                            .setFeatureFlag("resolution", 360)
                             .setAudioOnly(false)
                             .setUserInfo(_userInfo)
+                            .setFeatureFlag("call-integration.enabled", false)
+                            .setFeatureFlag("resolution", 360)
+                            .setFeatureFlag("pip.enabled", false)
+                            .setFeatureFlag("calendar.enabled", false)
                             .build();
                     mJitsiMeetViewReference.getJitsiMeetView().join(options);
                 }
@@ -90,10 +92,12 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
                     }
                     RNJitsiMeetConferenceOptions options = new RNJitsiMeetConferenceOptions.Builder()
                             .setRoom(url)
-                            .setFeatureFlag("call-integration.enabled", false)
-                            .setFeatureFlag("resolution", 360)
                             .setAudioOnly(true)
                             .setUserInfo(_userInfo)
+                            .setFeatureFlag("call-integration.enabled", false)
+                            .setFeatureFlag("resolution", 360)
+                            .setFeatureFlag("pip.enabled", false)
+                            .setFeatureFlag("calendar.enabled", false)
                             .build();
                     mJitsiMeetViewReference.getJitsiMeetView().join(options);
                 }
@@ -108,6 +112,7 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
             public void run() {
                 if (mJitsiMeetViewReference.getJitsiMeetView() != null) {
                     mJitsiMeetViewReference.getJitsiMeetView().leave();
+                    mJitsiMeetViewReference.getJitsiMeetView().dispose();
                 }
             }
         });
