@@ -250,9 +250,9 @@ public class RNJitsiMeetConferenceOptions implements Parcelable {
         Bundle props = new Bundle();
 
         // Android always has the PiP flag set by default.
-        if (!featureFlags.containsKey("pip.enabled")) {
-            featureFlags.putBoolean("pip.enabled", true);
-        }
+        // if (!featureFlags.containsKey("pip.enabled")) {
+        //     featureFlags.putBoolean("pip.enabled", true);
+        // }
 
         props.putBundle("flags", featureFlags);
 
