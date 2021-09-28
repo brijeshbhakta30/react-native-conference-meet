@@ -90,6 +90,7 @@ public class RNJitsiMeetViewManager extends SimpleViewManager<RNJitsiMeetView> i
                     .setUserInfo(_userInfo)
                     .setFeatureFlag("pip.enabled", false)
                     .setFeatureFlag("calendar.enabled", false)
+                    .setFeatureFlag("call-integration.enabled", false)
                     .setAudioOnly(audioOnly)
                     .build();
 
